@@ -1,12 +1,18 @@
 .fieldcontainer {
     display: flex;
-    min-height: 100vh;
     flex-wrap: wrap;
-    min-width: 100vh;
+    justify-content: center
 }
 .field{
-    margin: 5px;
+    margin: 2px;
     border: 2px black;
-    min-width: 100px;
-    height: 100px;
+    min-width: 50px;
+    height: 50px;
+}
+.field:hover{
+    background-color: chartreuse;
+}
+.whiteText{
+    text-align: center;
+    color: white;
 }
