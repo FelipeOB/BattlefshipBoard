@@ -1,6 +1,6 @@
 //criar divs que representaram os fields dos campos
 const fieldDiv = document.querySelectorAll(".fieldcontainer")
-let tamanho = 8;
+let tamanho = 5;
 let tamanhoMais1 = tamanho + 1;
 let aux = 0;
 for (let i = 0; i < tamanhoMais1 * tamanhoMais1; i++) {
@@ -39,11 +39,11 @@ for (let i = 0; i < tamanhoMais1 * tamanhoMais1; i++) {
 }
 const indicatorXdiv = document.querySelectorAll(".boardIndicatorX");
 const indicatorYdiv = document.querySelectorAll(".boardIndicatorY");
-console.log(indicatorXdiv);
+
 for (let i = 0; i < indicatorXdiv.length; i++) {
     var pXdiv = document.createElement("p");    //declaracao elementos p
     indicatorXdiv[i].append(pXdiv);             //append de [pxdiv] em indicatorXdiv
-    pXdiv.innerText = [i];                      //adicionar texto no elemento p
+    pXdiv.innerText = [i+1];                    //adicionar texto no elemento p
     pXdiv.style.color = "white";                //general styling
     pXdiv.style.textAlign = "center";
 }
@@ -54,5 +54,6 @@ for (let i = 0; i < indicatorYdiv.length; i++) {
     pYdiv.style.color = "white";                //general styling
     pYdiv.style.textAlign = "center";
 }
+
 fieldDiv[0].setAttribute("style", `width :${54 * tamanhoMais1}px`); 
-//54 vem do (tamanho de cada tile) E (tamando da margem) especificado do CSS .field
+//54 vem do (tamanho de cada tile: 50px) E (tamando da margem: 2px)*2 especificado do CSS .field

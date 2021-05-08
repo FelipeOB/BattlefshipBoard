@@ -8,7 +8,7 @@
 .fieldcontainer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center
+    justify-content: center;
 }
 .field{
     margin: 2px;
@@ -19,9 +19,5 @@
     cursor: pointer;
 }
 .field:hover{
-    background-color: chartreuse!important;
-}
-.whiteText{
-    text-align: center;
-    color: white;
+    background-color: rgb(39, 147, 209)!important;
 }
