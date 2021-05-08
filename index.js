@@ -1,27 +1,22 @@
 //criar divs que representaram os fields dos campos
 const fieldDiv = document.querySelectorAll(".fieldcontainer")
-let tamanho = 5;
+let tamanho = 10;
 let tamanhoMais1 = tamanho + 1;
 let aux = 0;
 for (let i = 0; i < tamanhoMais1 * tamanhoMais1; i++) {
     if(i == 0){
         var div = document.createElement("div");
-        div.setAttribute("class", "field");
-        div.classList.add("field");
+        div.setAttribute("class", "boardIndicatorX");
         fieldDiv[0].append(div);
     }else if(i < tamanhoMais1){
         var div = document.createElement("div");
-        div.setAttribute("class", "field");
         div.setAttribute("class", "boardIndicatorX");
         div.setAttribute("style", "background-color: black");
-        div.classList.add("field");
         fieldDiv[0].append(div);
     }else if(i % tamanhoMais1 == 0) {
         var div = document.createElement("div");
-        div.setAttribute("class", "field");
         div.setAttribute("class", "boardIndicatorY");
         div.setAttribute("style", "background-color: red");
-        div.classList.add("field");
         fieldDiv[0].append(div);
     }else {
         var div = document.createElement("div");
@@ -35,6 +30,7 @@ for (let i = 0; i < tamanhoMais1 * tamanhoMais1; i++) {
         }
         div.classList.add("field");
         fieldDiv[0].append(div);
+        div.addEventListener("click", () => {alert("Acessando um field")})
     }
 }
 const indicatorXdiv = document.querySelectorAll(".boardIndicatorX");
@@ -47,10 +43,14 @@ for (let i = 0; i < indicatorXdiv.length; i++) {
     pXdiv.style.color = "white";                //general styling
     pXdiv.style.textAlign = "center";
 }
+let aux2 = 65;
+var letra = String.fromCharCode(aux2);
 for (let i = 0; i < indicatorYdiv.length; i++) {
     var pYdiv = document.createElement("p");    //declaracao elementos p
     indicatorYdiv[i].append(pYdiv);             //append de [pxdiv] em indicatorXdiv
-    pYdiv.innerText = "A";                      //adicionar texto no elemento p
+    pYdiv.innerText = letra;                    //adicionar texto no elemento p
+    aux2 += 1;
+    letra = String.fromCharCode(aux2);
     pYdiv.style.color = "white";                //general styling
     pYdiv.style.textAlign = "center";
 }
