@@ -1,6 +1,6 @@
 //criar divs que representaram os fields dos campos
 const fieldDiv = document.querySelectorAll(".fieldcontainer")
-let tamanho = 6;
+let tamanho = 8;
 let tamanhoMais1 = tamanho + 1;
 let aux = 0;
 for (let i = 0; i < tamanhoMais1 * tamanhoMais1; i++) {
@@ -54,3 +54,5 @@ for (let i = 0; i < indicatorYdiv.length; i++) {
     pYdiv.style.color = "white";                //general styling
     pYdiv.style.textAlign = "center";
 }
+fieldDiv[0].setAttribute("style", `width :${54 * tamanhoMais1}px`); 
+//54 vem do (tamanho de cada tile) E (tamando da margem) especificado do CSS .field
