@@ -39,7 +39,7 @@ const indicatorYdiv = document.querySelectorAll(".boardIndicatorY");
 for (let i = 0; i < indicatorXdiv.length; i++) {
     var pXdiv = document.createElement("p");    //declaracao elementos p
     indicatorXdiv[i].append(pXdiv);             //append de [pxdiv] em indicatorXdiv
-    pXdiv.innerText = [i+1];                    //adicionar texto no elemento p
+    pXdiv.innerText = [i + 1];                    //adicionar texto no elemento p
     pXdiv.style.color = "white";                //general styling
     pXdiv.style.textAlign = "center";
 }

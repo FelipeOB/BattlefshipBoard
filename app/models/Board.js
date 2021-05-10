@@ -1,8 +1,10 @@
 class Board {
-    constructor(tamanho, width=50, height=50) {
+    constructor(tamanho) {
         this._tamanho = tamanho;
-        this._width = width;
-        this._height = height;
+
+        this.ships = [];
+
+        this.fields = [];
     }
 
     get tamanho() {
@@ -15,5 +17,9 @@ class Board {
 
     get height() {
         return this._height;
+    }
+
+    adicionaBarco(ship) {
+        this.ships.push(ship);
     }
 }
