@@ -19,6 +19,10 @@ class Board {
         return this._height;
     }
 
+    fieldClick(id) {
+        return this.fields[id].fieldClick();
+    }
+
     adicionaBarco(ship) {
         this.ships.push(ship);
     }

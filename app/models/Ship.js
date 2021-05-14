@@ -1,9 +1,13 @@
 class Ship {
-    constructor(nome, tamanho, id) {
+    constructor(nome, tamanho) {
         this.nome = nome;
         this.tamanho = tamanho
-        this.posicao = [].concat(this.colocaPosicao(this.tamanho, id));
+        this.posicao = [];
         this.hit = [];
+    }
+
+    setPosicao(id) {
+        this.posicao = [].concat(this.colocaPosicao(this.tamanho, id));
     }
 
     colocaPosicao(tamanho, id) {

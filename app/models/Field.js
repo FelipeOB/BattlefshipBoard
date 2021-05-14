@@ -11,4 +11,8 @@ class Field {
     get classe(){
         return this._classe;
     }
+
+    fieldClick(){
+        return this.id;
+    }
 }

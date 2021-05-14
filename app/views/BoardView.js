@@ -13,7 +13,7 @@ class BoardView {
                 div.setAttribute("id", board.fields[i].id);
                 div.addEventListener("click", (event) => {
                     event.preventDefault;
-                    boardController.fieldClick(div.id, board)
+                    board.fieldClick(i);
                 });
                 fieldDiv[0].append(div);
             }else {

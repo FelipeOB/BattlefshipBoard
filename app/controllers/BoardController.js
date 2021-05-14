@@ -2,29 +2,32 @@ class BoardController {
     constructor() {
         let $ = document.querySelector.bind(document)
         let self = this;
-        let ship4 = new Ship("barco4", 4, 10);
-        let ship5 = new Ship("barco4", 4, 15);
-        let board = new Board(10);
-        let boardView = new BoardView(); // documento.querySelector(.fieldcontainer)
+       
+        let shipsDB = [["barco4", 4], ["barco3", 3], ["barco2", 2]];//pegar no banco de dados
+        let ships = [];
+        ships.concat(shipsDB.forEach(elemento => ships.push(this.criaShip(elemento[0], elemento[1]))));
+        console.log(ships);
+       
+        let boardView = new BoardView();
+        let meuBoard = new Board(5);
+        this.criaListaField(meuBoard);
+        boardView.update(meuBoard, self);
+        meuBoard.adicionaBarco(ships[0]);
+        meuBoard.adicionaBarco(ships[1]);
+        meuBoard.adicionaBarco(ships[2]);
 
-        this.criaListaField(board);
-        board.adicionaBarco(ship4);
-        board.adicionaBarco(ship5);
+        let boardInimigo = new Board(5);
+        this.criaListaField(boardInimigo);
 
-        console.log(board);
-        boardView.update(board, self);
+        let shipView = new ShipView();
+        shipView.update(ships, self);
     }
 
-    fieldClick(id, board){
-        for(let i = 0; i < board.ships.length; i++){
-            for(let j = 0; j < board.ships[i].posicao.length; j++){
-                if(board.ships[i].posicao[j] == id){
-                    console.log(id);
-                    board.ships[i].setHit(id);
-                    break;
-                }
-            }
-        }
+    criaShip(nome, tamanho) {
+        return new Ship(
+            this.nome = nome,
+            this.tamanho = tamanho
+        )
     }
 
     criaField(id, classe) {
